@@ -1,25 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Pizza from './Pizza'
 
-function Pizzas() {
-	const [pizza, setPizza] = useState([])
-	const [none, setNone] = useState(false)
-
-	useEffect(()=>{
-		(async()=>{
-			let res = await fetch('/pizzas')
-			try {
-				let json = await res.json()
-				setPizza(json)
-			} catch (error) {
-				console.log(error);
-			}
-		})()
-	}, [])
+function Pizzas({ pizza, setPizza }) {
 
 	return (
 		<>
-		<Pizza pizza={pizza}/>
+			<Pizza pizza={pizza}/>
 		</>
 	)
 }

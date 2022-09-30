@@ -10,6 +10,9 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
+	Bullet.enable = true
+	Bullet.rails_logger = true
+	Bullet.bullet_logger = true
 
   # Show full error reports.
   config.consider_all_requests_local = true

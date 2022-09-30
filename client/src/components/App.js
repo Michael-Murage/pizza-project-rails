@@ -1,10 +1,11 @@
 import '../App.css';
+import Pizzas from './Pizzas';
 
 function App() {
   return (
     <div>
 			
-			<h1>Hello</h1>
+			<Pizzas/>
 			
     </div>
   );

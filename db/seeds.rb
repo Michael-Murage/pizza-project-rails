@@ -10,34 +10,38 @@ flavour = %w!Cheese Veggie Pepperoni Meat Margherita BBQ Hawaiian Buffalo Suprem
 restaurant = ['Ecco Pizzeria', 'Couch Tomato', 'Angie\'s Pizza', 'Palio\'s Pizza Cafe', 'Pizza Capri',
 	'Oz Pizza', 'Pizza Guys', 'Kentucky Fried Chicken', 'Mellow Mushroom', 'Verdugo Pizza']
 
-image = [
-	'https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_623344781-768x511.jpg.webp',
-	'https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_570541132-768x506.jpg.webp',
-	'https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_514457074-768x512.jpg.webp',
-	'https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_548340295-768x511.jpg.webp',
-	'https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_347791016-768x512.jpg.webp',
-	'https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_184944413-768x512.jpg.webp',
-	'https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_313437680-768x746.jpg.webp',
-	'https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/Buffalo-Chicken-Pizza-1-768x512.jpg.webp',
-	'https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_244706695-768x512.jpg.webp',
-	'https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_84904876-768x540.jpg.webp'
-]
+# image = [
+# 	'https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_623344781-768x511.jpg.webp',
+# 	'https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_570541132-768x506.jpg.webp',
+# 	'https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_514457074-768x512.jpg.webp',
+# 	'https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_548340295-768x511.jpg.webp',
+# 	'https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_347791016-768x512.jpg.webp',
+# 	'https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_184944413-768x512.jpg.webp',
+# 	'https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_313437680-768x746.jpg.webp',
+# 	'https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/Buffalo-Chicken-Pizza-1-768x512.jpg.webp',
+# 	'https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_244706695-768x512.jpg.webp',
+# 	'https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_84904876-768x540.jpg.webp'
+# ]
 
 # image = [
-	# '/client/assets/cheese.jpeg'
-	# '/assets/veggie.jpeg',
-	# '/assets/pepperoni.jpeg',
-	# '/assets/meat.jpeg',
-	# '/assets/margherita.jpeg',
-	# '/assets/bbq.jpeg',
-	# '/assets/hawaiian.jpeg',
-	# '/assets/buffalo.jpeg',
-	# '/assets/supreme.jpeg',
-	# '/assets/the-works.jpeg'
+# 	'app/assets/cheese.jpeg',
+# 	'app/assets/veggie.jpeg',
+# 	'app/assets/pepperoni.jpeg',
+# 	'app/assets/meat.jpeg',
+# 	'app/assets/margherita.jpeg',
+# 	'app/assets/bbq.jpeg',
+# 	'app/assets/hawaiian.jpeg',
+# 	'app/assets/buffalo.jpeg',
+# 	'app/assets/supreme.jpeg',
+# 	'app/assets/the-works.jpeg'
 # ]
 
 for i in 0...10 do
-	Pizza.create!(name: flavour[i], image: image[i])
+	ingre = []
+	3.times{ingre << Faker::Food.ingredient}
+	pizza = Pizza.new(name: flavour[i], ingredients: ingre.join(', '))
+	# pizza.image.attach(io: File.open(image[i]), filename: "#{flavour[i]}.jpeg")
+	pizza.save!
 	Restaurant.create!(
 		name: restaurant[i], 
 		review: Faker::Restaurant.review, 
@@ -46,8 +50,9 @@ for i in 0...10 do
 	)
 end
 
-for i in 0..5 do
-	for j in 0..5 do
-		RestaurantPizza.create(pizza_id: i, restaurant_id: j)
+for i in 0..10 do
+	for j in 0..10 do
+		RestaurantPizza.create(pizza_id: i, restaurant_id: j, price: rand(1..30))
 	end
 end
+# 40.times{RestaurantPizza.create(pizza_id: rand(1..10), restaurant_id: rand(1..10), price: rand(1..30))}

@@ -38,7 +38,12 @@ image = [
 
 for i in 0...10 do
 	Pizza.create!(name: flavour[i], image: image[i])
-	Restaurant.create!(name: restaurant[i], review: Faker::Restaurant.review, description: Faker::Restaurant.description)
+	Restaurant.create!(
+		name: restaurant[i], 
+		review: Faker::Restaurant.review, 
+		description: Faker::Restaurant.description, 
+		address: Faker::Address.full_address
+	)
 end
 
 for i in 0..5 do

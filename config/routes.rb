@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :restaurants, only: [:index]
-  resources :pizzas, only: [:index]
+  resources :restaurants, only: [:index, :show]
+  resources :pizzas, only: [:index, :show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

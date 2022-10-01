@@ -7,8 +7,29 @@ img{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 }
 .pizza-desc{
-	font-size: x-large;
-	font-weight: 700;
+	font-size: 2em;
+	font-weight: 550;
+}
+.pizza-cont{
+	cursor: pointer;
+}
+.rest-text{
+	cursor: pointer;
+}
+.rest-cont{
+	background-color: #eee;
+	border-radius: 10px;
+}
+@media screen and (min-width:768px) and (max-width:991px) {
+	body {
+			margin-bottom:100px;
+	}
+}
+@media screen and (min-width:992px) and (max-width:1199px) {
+	body {
+			margin-bottom:50px;
+	}
 }

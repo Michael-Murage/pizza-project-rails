@@ -1,10 +1,11 @@
 import React from 'react'
-import ReactLoading from 'react-loading'
 
 function Loading() {
 	return (
-		<div>
-			<ReactLoading type={'bubbles'} color='orange' height={'20%'} width={'20%'}/>
+		<div className='d-flex justify-content-center vh-100 align-items-top'>
+			<div className="spinner-grow text-warning" role="status">
+  			{/* <span className="sr-only">Loading...</span> */}
+			</div>
 		</div>
 	)
 }

@@ -13,6 +13,7 @@ Rails.application.configure do
 	Bullet.enable = true
 	Bullet.rails_logger = true
 	Bullet.bullet_logger = true
+	# config.active_storage.service = :local
 
   # Show full error reports.
   config.consider_all_requests_local = true

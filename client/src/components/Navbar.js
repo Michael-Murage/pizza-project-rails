@@ -14,7 +14,7 @@ function Navbar() {
         			<a className="nav-link" href="/"><h1><RiHome2Line/></h1></a>
         			<a className="nav-link" href="#top"><h1><RiSearchLine/></h1></a>
         			<a className="nav-link" href="/"><h1><RiShoppingCart2Line/></h1></a>
-        			<a className="nav-link" href='/'><h1><MdOutlineNoteAlt/></h1></a>
+        			<a className="nav-link" href='/restaurants'><h1><MdOutlineNoteAlt/></h1></a>
       			</div>
   			</nav>
 			</nav>

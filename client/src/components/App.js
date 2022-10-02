@@ -6,6 +6,8 @@ import EditPizza from './EditPizza';
 import EditRestaurant from './EditRestaurant';
 import Home from './Home';
 import Navbar from './Navbar';
+import NewPizza from './NewPizza';
+import NewRestaurant from './NewRestaurant';
 import PizzaView from './PizzaView';
 import Restaurants from './Restaurants';
 import RestaurantView from './RestaurantView';
@@ -25,6 +27,8 @@ function App() {
 					<Route path='/pizza/:id' element={<PizzaView/>}/>
 					<Route path='/restaurant/:id/edit' element={<EditRestaurant/>}/>
 					<Route path='/pizza/:id/edit' element={<EditPizza/>}/>
+					<Route path='/new-pizza' element={<NewPizza/>}/>
+					<Route path='/new-restaurant' element={<NewRestaurant/>}/>
 				</Routes>
 				<Navbar />
 			</BrowserRouter>			

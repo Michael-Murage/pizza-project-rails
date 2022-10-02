@@ -10,13 +10,12 @@ function PizzaView() {
 	const navigate = useNavigate()
 	const {data, err, load, setData} = useGetData(`/pizzas/${id}`)
 
-	console.log(data);
 	try {
 		return (
 			<div className="card">
 
 			  <div className="view overlay">
-			    <img className="card-img-top" src={require(`../assets/${data.name}.jpeg`)}
+			    <img className="card-img-top" src={data.image || require(`../assets/${data.name}.jpeg`)}
 			      alt={data.name}/>
 			    <a>
 			      <div className="mask rgba-white-slight"></div>

@@ -38,6 +38,7 @@ function EditPizza() {
 			console.log(error);
 		}
 		navigate('/')
+		alert('Pizza edited successfully 😊')
 	}
 
 	const handleChange = (e)=>{

@@ -39,6 +39,7 @@ function EditRestaurant() {
 			console.log(error);
 		}
 		navigate('/restaurants')
+		alert('Restaurant edited successfully 😊')
 	}
 
 	const handleChange = (e)=>{

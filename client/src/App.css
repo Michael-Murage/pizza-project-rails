@@ -36,5 +36,8 @@ img{
 .pizza-btns{
 	display: flex;
 	justify-content: space-around;
-
+}
+.nav-btns{
+	text-decoration: none;
+	font-weight: 500;
 }

@@ -1,10 +1,13 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { GrEdit } from 'react-icons/gr'
+import { RiDeleteBin6Line } from 'react-icons/ri'
+import { useNavigate, useParams } from 'react-router-dom'
 import useGetData from '../hooks/getData'
 import Loading from './Loading'
 
 function PizzaView() {
 	const {id} = useParams()
+	const navigate = useNavigate()
 	const {data, err, load, setData} = useGetData(`/pizzas/${id}`)
 
 	console.log(data);
@@ -26,10 +29,11 @@ function PizzaView() {
 			    <h4 className="card-title">{data.name}</h4>
 			    <hr className="hr-light"/>
 			    <p className="card-text white-text mb-4">{data.ingredients}</p>
-			    {/* <a href="#!" className="white-text d-flex justify-content-end">
-			      <h5>Read more <i className="fas fa-angle-double-right"></i></h5>
-			    </a> */}
-
+					<div className=' container-fluid  pizza-btns'>
+						<button className='btn btn-primary btn-sm' onClick={()=> navigate(`/pizza/${id}/edit`)}><GrEdit/></button>
+						<button className='btn btn-danger btn-sm' onClick={()=> navigate(`/pizza/${id}/edit#bottom`)}><RiDeleteBin6Line/></button>
+						<div></div>
+					</div>
 			  </div>
 
 			</div>

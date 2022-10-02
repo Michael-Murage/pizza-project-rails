@@ -2,6 +2,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import '../App.css';
 import useGetData from '../hooks/getData';
+import EditPizza from './EditPizza';
 import EditRestaurant from './EditRestaurant';
 import Home from './Home';
 import Navbar from './Navbar';
@@ -23,6 +24,7 @@ function App() {
 					<Route path='/restaurant/:id' element={<RestaurantView />}/>
 					<Route path='/pizza/:id' element={<PizzaView/>}/>
 					<Route path='/restaurant/:id/edit' element={<EditRestaurant/>}/>
+					<Route path='/pizza/:id/edit' element={<EditPizza/>}/>
 				</Routes>
 				<Navbar />
 			</BrowserRouter>			

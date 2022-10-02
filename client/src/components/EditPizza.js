@@ -1,18 +1,17 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
-function EditRestaurant() {
+function EditPizza() {
 	const {id} = useParams()
 	const navigate = useNavigate()
 	const [data, setData] = useState({
-		address: '',
-		name: '',
-		review: '',
-		description: ''
+		flavour: '',
+		ingredients: '',
+		image: ''
 	})
 
 	useEffect(()=>{
-		fetch(`/restaurants/${id}`)
+		fetch(`/pizzas/${id}`)
 		.then(res=> res.json())
 		.then(items=>setData(items))
 	}, [])
@@ -20,7 +19,7 @@ function EditRestaurant() {
 	const handleFormSubmission = async (e, func) => {
 		e.preventDefault();
 
-		const url = `/restaurants/${id}`
+		const url = `/pizzas/${id}`
 		const method = func === 'delete' ? "DELETE" : "PUT"
 		
 
@@ -38,7 +37,7 @@ function EditRestaurant() {
 		} catch (error) {
 			console.log(error);
 		}
-		navigate('/restaurants')
+		navigate('/')
 	}
 
 	const handleChange = (e)=>{
@@ -48,21 +47,17 @@ function EditRestaurant() {
 	return (
 		<form className='card my-3 container bg-light'>
 			<div className="form-outline mb-4 mt-2">
-				<label className="form-label" htmlFor='name'>Name</label>
-    		<input name='name'  type="text" className="form-control" onChange={handleChange} value={data?.name} />
+				<label className="form-label" htmlFor='flavour'>Flavour</label>
+    		<input name='flavour'  type="text" className="form-control" onChange={handleChange} value={data?.name} />
   		</div>
 
   		<div className="form-outline mb-4">
-				<label className="form-label" htmlFor='address'>Address</label>
-    		<input name='address' onChange={handleChange} value={data?.address} type="text" className="form-control" />
+				<label className="form-label" htmlFor='image'>Image URL</label>
+    		<input name='image' onChange={handleChange} value={data?.image} type="text" className="form-control" />
   		</div>
   		<div className="form-outline mb-4">
-				<label className="form-label" htmlFor='review'>Review</label>
-    		<textarea name='review' onChange={handleChange} value={data?.review} className='form-control' rows='3'/>
-  		</div>
-  		<div className="form-outline mb-4">
-				<label className="form-label" htmlFor='description'>Description</label>
-    		<textarea name='description' onChange={handleChange} value={data?.description} className='form-control' rows='3'/>
+				<label className="form-label" htmlFor='ingredients'>Ingedients</label>
+    		<textarea name='ingredients' onChange={handleChange} value={data?.ingredients} className='form-control' rows='2'/>
   		</div>
 			{/* <div className="form-outline mb-4">
 				<label className="form-label" htmlFor='pizzas'>Pizzas</label>
@@ -82,4 +77,4 @@ function EditRestaurant() {
 	)
 }
 
-export default EditRestaurant
+export default EditPizza

@@ -33,3 +33,8 @@ img{
 			margin-bottom:50px;
 	}
 }
+.pizza-btns{
+	display: flex;
+	justify-content: space-around;
+
+}

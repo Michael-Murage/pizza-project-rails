@@ -6,14 +6,25 @@ class PizzasController < ApplicationController
 	end
 
 	def show
-		piz = Pizza.find(params[:id])
+		piz = find_piz
 		render json: piz, status: :ok
 	end
 
 	def create
 		pizza = Pizza.create!(pizza_params)
-		pizza.image.attach(params[:image])
 		render json: pizza, status: :created
+	end
+
+	def update
+		piz = find_piz
+		piz.update!(pizza_params)
+		render json: piz, status: :accepted
+	end
+
+	def destroy
+		piz = find_piz
+		piz.destroy
+		render json: {}, status: :accepted
 	end
 
 	private
@@ -26,5 +37,7 @@ class PizzasController < ApplicationController
 		params.permit(:name, :ingredients, :image)
 	end
 
-	
+	def find_piz
+		Pizza.find(params[:id])
+	end
 end

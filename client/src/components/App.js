@@ -2,6 +2,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import '../App.css';
 import useGetData from '../hooks/getData';
+import EditRestaurant from './EditRestaurant';
 import Home from './Home';
 import Navbar from './Navbar';
 import PizzaView from './PizzaView';
@@ -21,6 +22,7 @@ function App() {
 					<Route path='/restaurants' element={<Restaurants />} />
 					<Route path='/restaurant/:id' element={<RestaurantView />}/>
 					<Route path='/pizza/:id' element={<PizzaView/>}/>
+					<Route path='/restaurant/:id/edit' element={<EditRestaurant/>}/>
 				</Routes>
 				<Navbar />
 			</BrowserRouter>			

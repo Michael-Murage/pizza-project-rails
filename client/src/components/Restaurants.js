@@ -8,7 +8,7 @@ function Restaurants() {
 	return (
 		<div className='container rests-cont'>
 			{(Array.isArray(data) ? data : []).map(rest =>{
-				return <Restaurant rest={rest}/>
+				return <Restaurant rest={rest} key={rest.id}/>
 			})
 				
 			}

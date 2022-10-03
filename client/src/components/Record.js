@@ -58,7 +58,7 @@ function Record() {
 
 			<div className="form-outline mb-4">
 				<label className="form-label" htmlFor='pizzas'>Pizza</label>
-				<select className="form-select" aria-label="pizzas" name='pizza_id' onChange={handleChange}>
+				<select className="form-select" aria-label="pizzas" value={data?.pizza_id} name='pizza_id' onChange={handleChange}>
 					<option>Open this select menu</option>
 					{
 						(Array.isArray(piz) ? piz : []).map(item=>{
@@ -72,7 +72,7 @@ function Record() {
 
 			<div className="form-outline mb-4">
 				<label className="form-label" htmlFor='restaurants'>Restaurant</label>
-				<select className="form-select" aria-label="restaurants" name='restaurant_id' onChange={handleChange}>
+				<select className="form-select" aria-label="restaurants" name='restaurant_id' value={data?.restaurant_id} onChange={handleChange}>
 					<option>Open this select menu</option>
 					{
 						(Array.isArray(rest) ? rest : []).map(item=>{

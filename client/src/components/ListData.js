@@ -26,12 +26,12 @@ function ListData({ item }) {
 					<td>{item.price}</td>
         	<td>
         		<MDBBtn color='link' size='sm'>
-							<button className='btn btn-success btn-sm' onClick={()=>navigate(`/record/${item.id}`)}><GrEdit/></button>
+							<button className='btn btn-success btn-sm' data-toggle="tooltip" data-placement="top" title="Click to edit record" onClick={()=>navigate(`/record/${item.id}`)}><GrEdit/></button>
         		</MDBBtn>
         	</td>
 					<td>
         		<MDBBtn color='link' size='sm'>
-							<button className='btn btn-danger btn-sm' onClick={deleteItem}><RiDeleteBin6Line/></button>
+							<button className='btn btn-danger btn-sm' data-toggle="tooltip" data-placement="top" title="Click to " onClick={deleteItem}><RiDeleteBin6Line/></button>
         		</MDBBtn>
         	</td>
 		</>

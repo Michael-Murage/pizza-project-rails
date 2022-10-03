@@ -42,11 +42,14 @@ img{
 	font-weight: 500;
 }
 .logo{
-	height: 100px;
-	width: 100px;
+	height: 60px;
+	width: 70px;
 }
 .cards{
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
+}
+.navigation{
+	height: 80px;
 }

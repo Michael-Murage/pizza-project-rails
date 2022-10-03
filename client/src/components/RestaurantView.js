@@ -58,7 +58,7 @@ function RestaurantView() {
 						(Array.isArray(data.pizzas) ? data.pizzas : []).map(piz=>{
 							return (
 								<div className="card my-2 ml-auto mr-2" style={{width: "18rem"}} key={piz.id}>
-  								<img src={require(`../assets/${piz.name}.jpeg`)} className="d-block w-100 mx-auto" alt={piz.name} onClick={()=>navigate(`/pizza/${piz.id}`)}/>
+  								<img src={piz.image ? piz.image : require(`../assets/${piz.name}.jpeg`)} className="d-block w-100 mx-auto" alt={piz.name} onClick={()=>navigate(`/pizza/${piz.id}`)}/>
   								<div className="card-body">
 										<h4>{piz.name}</h4>
     								<p className="card-text">{piz.ingredients}</p>

@@ -2,7 +2,7 @@ class RestaurantPizzasController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 rescue_from ActiveRecord::RecordInvalid, with: :render_422
 	def index
-		render json: RestaurantPizza.all, status: :ok
+		render json: RestaurantPizza.all.includes([:pizza, :restaurant]), status: :ok
 	end
 
 	def show

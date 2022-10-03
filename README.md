@@ -1,24 +1,38 @@
-# README
+# PIZZA APP
+This is an app that manages pizzas, restaurants and relevant orders.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## User Abilities
+For this app as per the time of writing, it has no form of authentication whatsoever and will be added very soon in future to limit what a user can do. Otherwise, a user can do anything now;
+A user can:
+* View, edit, delete pizza information and add a new pizza record
+* View, edit, delete restaurant information and a new restaurant record
+* View, edit, delete restaurant_pizza information and add a new record
 
-Things you may want to cover:
+## Local Setup (client and server side)
+To run the server locally, clone the code and run the following commands;
+```
+bundle install
+rails db:migrate db:seed
+rails s
+```
+This will set up the server, with some random seed data.
 
-* Ruby version
+```
+npm install --prefix client
+npm start --prefix client
+```
+This will set up the client side.
 
-* System dependencies
+## Server Side and Database Information
+Model relations
+A restaurant `has_many` restaurant_pizzas
+A restaurant `has_many` pizzas `through` restaurant_pizzas
 
-* Configuration
+A restaurant_pizza `belongs_to` restaurant
+A restaurant_pizza `belongs_to` pizza
 
-* Database creation
+A pizza `has_many` restaurant_pizzas
+A pizza `has_many` restaurants `through` restaurant_pizzas
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Deployment link will be coming soon

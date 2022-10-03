@@ -3,7 +3,7 @@ import { GrEdit } from 'react-icons/gr'
 import { RiDeleteBin6Line } from 'react-icons/ri'
 import { useNavigate } from 'react-router-dom'
 
-function Restaurant({ rest, key }) {
+function Restaurant({ rest }) {
 	const [summary, setSummary] = useState(true)
 	const [descSummary, setDescSummary] = useState(true)
 	const navigate = useNavigate()
@@ -16,7 +16,7 @@ function Restaurant({ rest, key }) {
 
 	return (
 		<div className='rest-cont my-3 container-fluid'>
-			<div className='row my-3 rest-cont' key={key}>
+			<div className='row my-3 rest-cont' >
 					<div className='col col-md-5 rest-text border rounded-right rounded-bottom' onClick={()=>loadRestaurant(rest.id)}>
 						{/* <h1>{rest.id}</h1> */}
 						<h3>{rest.name}</h3>

@@ -1,6 +1,8 @@
 import React from 'react'
-import { RiHome2Line, RiSearchLine, RiShoppingCart2Line } from 'react-icons/ri'
+import { RiHome2Line, RiShoppingCart2Line } from 'react-icons/ri'
 import { MdOutlineNoteAlt } from 'react-icons/md'
+import { GrRestaurant } from 'react-icons/gr'
+import { Badge } from '@mui/material'
 
 function Navbar() {
 	return (
@@ -12,9 +14,9 @@ function Navbar() {
     			</button> */}
       			<div className="container-fluid navbar navbar-nav collapse navbar-collapse">
         			<a className="nav-link" href="/"><h1><RiHome2Line/></h1></a>
-        			<a className="nav-link" href="#top"><h1><RiSearchLine/></h1></a>
-        			<a className="nav-link" href="/"><h1><RiShoppingCart2Line/></h1></a>
-        			<a className="nav-link" href='/restaurants'><h1><MdOutlineNoteAlt/></h1></a>
+        			<a className="nav-link" href="/newrecord"><Badge badgeContent={'+'} color="primary"><h1><MdOutlineNoteAlt/></h1></Badge></a>
+        			<a className="nav-link" href="/record"><h1><RiShoppingCart2Line/></h1></a>
+        			<a className="nav-link" href='/restaurants'><h1><GrRestaurant/></h1></a>
       			</div>
   			</nav>
 			</nav>

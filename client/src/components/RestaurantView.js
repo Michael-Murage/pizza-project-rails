@@ -1,15 +1,11 @@
-import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import useGetData from '../hooks/getData'
 import Loading from './Loading'
 
 function RestaurantView() {
 	const {id} = useParams()
-	const [loading, setLoading] = useState(true)
-	const {data, err, load, setData} = useGetData(`/restaurants/${id}`)
-	console.log(data);
-	// console.log(err);
-	// console.log(load);
+	const navigate = useNavigate()
+	const { data } = useGetData(`/restaurants/${id}`)
 
 	try {
 		return (
@@ -25,7 +21,7 @@ function RestaurantView() {
 					<h3>Pizzas</h3>
 				</div>
 
-				<div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
+				{/* <div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
   				<ol className="carousel-indicators">
 						{
 							(Array.isArray(data.pizzas) ? data.pizzas : []).map(piz=>{
@@ -40,16 +36,13 @@ function RestaurantView() {
 								<div className="carousel-item active text-center container" key={piz.id}>
   				    		<img src={require(`../assets/${piz.name}.jpeg`)} className="d-block w-100 mx-auto" alt={piz.name}/>
   				    		<div className="carousel-caption d-none d-md-block">
-  				      		{/* <h5>{piz.name} pizza</h5> */}
+  				      		<h5>{piz.name} pizza</h5>
   				      		<p>{piz.name} pizza</p>
   				    		</div>
   				 	 		</div>
 							)
-							
 						})
 						}
-  				  
-
   				</div>
   				<button className="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
   				  <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -59,6 +52,21 @@ function RestaurantView() {
   				  <span className="carousel-control-next-icon" aria-hidden="true"></span>
   				  <span className="sr-only">Next</span>
   				</button>
+				</div> */}
+				<div className='container cards px-2'>
+					{
+						(Array.isArray(data.pizzas) ? data.pizzas : []).map(piz=>{
+							return (
+								<div className="card my-2 ml-auto mr-2" style={{width: "18rem"}} key={piz.id}>
+  								<img src={require(`../assets/${piz.name}.jpeg`)} className="d-block w-100 mx-auto" alt={piz.name} onClick={()=>navigate(`/pizza/${piz.id}`)}/>
+  								<div className="card-body">
+										<h4>{piz.name}</h4>
+    								<p className="card-text">{piz.ingredients}</p>
+  								</div>
+								</div>
+							)
+						})
+					}
 				</div>
 			</div>
 		</div>

@@ -41,3 +41,12 @@ img{
 	text-decoration: none;
 	font-weight: 500;
 }
+.logo{
+	height: 100px;
+	width: 100px;
+}
+.cards{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}

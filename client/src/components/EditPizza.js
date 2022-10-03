@@ -5,7 +5,7 @@ function EditPizza() {
 	const {id} = useParams()
 	const navigate = useNavigate()
 	const [data, setData] = useState({
-		flavour: '',
+		name: '',
 		ingredients: '',
 		image: ''
 	})
@@ -14,6 +14,7 @@ function EditPizza() {
 		fetch(`/pizzas/${id}`)
 		.then(res=> res.json())
 		.then(items=>setData(items))
+		// eslint-disable-next-line
 	}, [])
 
 	const handleFormSubmission = async (e, func) => {
@@ -48,8 +49,8 @@ function EditPizza() {
 	return (
 		<form className='card my-3 container bg-light'>
 			<div className="form-outline mb-4 mt-2">
-				<label className="form-label" htmlFor='flavour'>Flavour</label>
-    		<input name='flavour'  type="text" className="form-control" onChange={handleChange} value={data?.name} />
+				<label className="form-label" htmlFor='name'>Flavour</label>
+    		<input name='name'  type="text" className="form-control" onChange={handleChange} value={data?.name} />
   		</div>
 
   		<div className="form-outline mb-4">

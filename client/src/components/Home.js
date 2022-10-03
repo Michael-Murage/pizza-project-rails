@@ -1,10 +1,21 @@
 import React from 'react'
-import Pizzas from './Pizzas'
+import useGetData from '../hooks/getData'
+import Pizza from './Pizza'
 
-function Home({ pizza, setPizza, handleSearch}) {
+function Home() {
+	const { data } = useGetData("/pizzas")
+
 	return (
-		<div className='container-fluid text-center'>
-			<Pizzas pizza={pizza} setPizza={setPizza}/>
+		<div>
+			{
+			(Array.isArray(data) ? data : []).map((piz)=>{
+				return(
+					<div className='container-fluid text-center' key={piz.id}>
+						<Pizza piz={piz}/>
+					</div> 
+				)
+			})
+		}
 		</div>
 	)
 }

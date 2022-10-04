@@ -21,8 +21,8 @@ gem 'active_model_serializers'
 # gem 'image_processing', '~> 1.2'
 # gem 'mysql2'
 # Reduces boot times through caching; required in config/boot.rb
-# gem 'bootsnap', '>= 1.4.4', require: false
-
+gem 'bootsnap', '>= 1.4.4', require: false
+# gem 'rake'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 gem 'faker'
@@ -37,6 +37,7 @@ group :development do
 	gem 'sqlite3', '~> 1.4'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+	gem 'pry'
 end
 
 group :production do

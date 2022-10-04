@@ -46,3 +46,11 @@ React v18.2.0
 Ruby v2.7.4
 
 Rails v6.1.7
+
+## Stack
+React v18.2.0
+
+Ruby v2.7.4
+
+Rails v6.1.7
+

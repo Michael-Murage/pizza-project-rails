@@ -23,7 +23,7 @@ function App() {
 			<SearchBar/>
 				<Routes>
 					<Route path='/' element={<Home />}/>
-					<Route path='/restaurants' element={<Restaurants />} />
+					<Route path='/restaurant' element={<Restaurants />} />
 					<Route path='/restaurant/:id' element={<RestaurantView />}/>
 					<Route path='/pizza/:id' element={<PizzaView/>}/>
 					<Route path='/restaurant/:id/edit' element={<EditRestaurant/>}/>

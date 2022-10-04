@@ -21,7 +21,7 @@ function Navbar() {
 									Place Order
 								</a>
         			<a className="nav-link" href="/record"><h1><RiShoppingCart2Line/></h1>Cart</a>
-        			<a className="nav-link" href='/restaurants'><h1><GrRestaurant/></h1>Restaurants</a>
+        			<a className="nav-link" href='/restaurant'><h1><GrRestaurant/></h1>Restaurants</a>
       			</div>
   			</nav>
 			</nav>

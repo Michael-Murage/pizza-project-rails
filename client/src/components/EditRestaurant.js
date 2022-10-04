@@ -38,7 +38,7 @@ function EditRestaurant() {
 		} catch (error) {
 			console.log(error);
 		}
-		navigate('/restaurants')
+		navigate('/restaurant')
 		alert('Restaurant edited successfully 😊')
 	}
 

@@ -67,8 +67,8 @@ function NewRecord() {
 		</div>
 				{/* {err ? <h1>{err}</h1> : ''} */}
 		<div className="form-outline mb-4">
-			<label className="form-label" htmlFor='restaurants'>Restaurant</label>
-			<select className="form-select" aria-label="restaurants" name='restaurant_id' onChange={handleChange}>
+			<label className="form-label" htmlFor='restaurant'>Restaurant</label>
+			<select className="form-select" aria-label="restaurant" name='restaurant_id' onChange={handleChange}>
 				<option>Open this select menu</option>
 				{
 					(Array.isArray(rest) ? rest : []).map(item=>{

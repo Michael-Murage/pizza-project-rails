@@ -9,6 +9,7 @@ const useGetData = (url) => {
 			setLoad(true)
 			try{
 				const res = await fetch(url)
+				console.log(res);
 				if(res.ok){
 					let json = await res.json()
 					setData(json)

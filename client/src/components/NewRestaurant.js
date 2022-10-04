@@ -27,7 +27,7 @@ function NewRestaurant() {
 		.then(console.log)
 		.catch(err => console.log(err))
 		.finally(()=>{
-			navigate("/restaurants")
+			navigate("/restaurant")
 			alert('Restaurant added successfully 😊')
 		})
 

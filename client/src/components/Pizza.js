@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 function Pizza({ piz }) {
 	const navigate = useNavigate()
 	const loadPizza = (id) =>{
-		navigate(`/api/pizza/${id}`)
+		navigate(`pizza/${id}`)
 	}
 	try {
 		return (

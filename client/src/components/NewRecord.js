@@ -13,11 +13,11 @@ function NewRecord() {
 	})
 
 	useEffect(()=>{
-		fetch("/pizza_only")
+		fetch("/api/pizza_only")
 		.then(res=>res.json())
 		.then(data=>setPiz(data))
 
-		fetch("/rest_only")
+		fetch("/api/rest_only")
 		.then(res=>res.json())
 		.then(data=>setRest(data))
 	}, [])
@@ -28,7 +28,7 @@ function NewRecord() {
 
 	const handleSubmit = (e) =>{
 		e.preventDefault()
-		fetch("/restaurant_pizzas",{
+		fetch("/api/restaurant_pizzas",{
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"

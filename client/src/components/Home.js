@@ -3,7 +3,7 @@ import useGetData from '../hooks/getData'
 import Pizza from './Pizza'
 
 function Home() {
-	const { data } = useGetData("/pizzas")
+	const { data } = useGetData("/api/pizzas")
 
 	return (
 		<div>

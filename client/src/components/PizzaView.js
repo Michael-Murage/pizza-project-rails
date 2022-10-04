@@ -8,7 +8,7 @@ import Loading from './Loading'
 function PizzaView() {
 	const {id} = useParams()
 	const navigate = useNavigate()
-	const {data, err, load, setData} = useGetData(`/pizzas/${id}`)
+	const {data, err, load, setData} = useGetData(`/api/pizzas/${id}`)
 
 	try {
 		return (

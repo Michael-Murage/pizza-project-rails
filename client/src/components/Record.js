@@ -8,14 +8,14 @@ function Record() {
 	const [piz, setPiz] = useState([])
 	const [rest, setRest] = useState([])
 
-	const {data, setData} = useGetData(`/restaurant_pizzas/${id}`)
+	const {data, setData} = useGetData(`/api/restaurant_pizzas/${id}`)
 
 	useEffect(()=>{
-		fetch("/pizza_only")
+		fetch("/api/pizza_only")
 		.then(res=>res.json())
 		.then(data=>setPiz(data))
 
-		fetch("/rest_only")
+		fetch("/api/rest_only")
 		.then(res=>res.json())
 		.then(data=>setRest(data))
 	}, [])
@@ -23,7 +23,7 @@ function Record() {
 	const handleFormSubmission = async (e, func) => {
 		e.preventDefault();
 
-		const url = `/restaurant_pizzas/${id}`
+		const url = `/api/restaurant_pizzas/${id}`
 		const method = func === 'delete' ? "DELETE" : "PUT"
 		
 

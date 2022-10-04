@@ -15,7 +15,7 @@ function NewPizza() {
 
 	const handleSubmit = (e) =>{
 		e.preventDefault()
-		fetch("/pizzas",{
+		fetch("/api/pizzas",{
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"

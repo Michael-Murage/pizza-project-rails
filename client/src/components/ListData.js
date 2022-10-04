@@ -8,7 +8,7 @@ function ListData({ item }) {
 	const navigate = useNavigate()
 	
 	const deleteItem = ()=>{
-		fetch(`/restaurant_pizzas/${item.id}`,{
+		fetch(`/api/restaurant_pizzas/${item.id}`,{
 			method: "DELETE",
 			headers: {
 				"Content-Type": "application/json"

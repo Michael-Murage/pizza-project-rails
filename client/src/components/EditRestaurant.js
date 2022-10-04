@@ -12,7 +12,7 @@ function EditRestaurant() {
 	})
 
 	useEffect(()=>{
-		fetch(`/restaurants/${id}`)
+		fetch(`/api/restaurants/${id}`)
 		.then(res=> res.json())
 		.then(items=>setData(items))
 	}, [])
@@ -20,7 +20,7 @@ function EditRestaurant() {
 	const handleFormSubmission = async (e, func) => {
 		e.preventDefault();
 
-		const url = `/restaurants/${id}`
+		const url = `/api/restaurants/${id}`
 		const method = func === 'delete' ? "DELETE" : "PUT"
 		
 

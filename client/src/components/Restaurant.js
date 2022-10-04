@@ -9,7 +9,7 @@ function Restaurant({ rest }) {
 	const navigate = useNavigate()
 
 	const swapReview = (state) => setSummary(state)
-	const loadRestaurant = (id) => navigate(`/restaurant/${id}`)
+	const loadRestaurant = (id) => navigate(`/api/restaurant/${id}`)
 	const swapDesc = (state) => setDescSummary(state)
 
 	const loadEdit = (method) => method === 'edit' ? navigate(`/restaurant/${rest.id}/edit`) : navigate(`/restaurant/${rest.id}/edit#bottom`)

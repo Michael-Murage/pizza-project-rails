@@ -4,7 +4,7 @@ import ListData from './ListData'
 import { MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
 
 function RestaurantPizzas() {
-	const { data } = useGetData('/restaurant_pizzas')
+	const { data } = useGetData('/api/restaurant_pizzas')
 
 	return (
 		<div>

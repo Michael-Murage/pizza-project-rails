@@ -16,7 +16,7 @@ function NewRestaurant() {
 
 	const handleSubmit = (e) =>{
 		e.preventDefault()
-		fetch("/restaurants",{
+		fetch("/api/restaurants",{
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"

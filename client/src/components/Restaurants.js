@@ -3,7 +3,7 @@ import useGetData from '../hooks/getData'
 import Restaurant from './Restaurant'
 
 function Restaurants() {
-	const { data } = useGetData("/restaurants")
+	const { data } = useGetData("/api/restaurants")
 	
 	return (
 		<div className='container rests-cont'>

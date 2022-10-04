@@ -5,7 +5,7 @@ import Loading from './Loading'
 function RestaurantView() {
 	const {id} = useParams()
 	const navigate = useNavigate()
-	const { data } = useGetData(`/restaurants/${id}`)
+	const { data } = useGetData(`/api/restaurants/${id}`)
 
 	try {
 		return (

@@ -11,7 +11,7 @@ function EditPizza() {
 	})
 
 	useEffect(()=>{
-		fetch(`/pizzas/${id}`)
+		fetch(`/api/pizzas/${id}`)
 		.then(res=> res.json())
 		.then(items=>setData(items))
 		// eslint-disable-next-line
@@ -20,7 +20,7 @@ function EditPizza() {
 	const handleFormSubmission = async (e, func) => {
 		e.preventDefault();
 
-		const url = `/pizzas/${id}`
+		const url = `/api/pizzas/${id}`
 		const method = func === 'delete' ? "DELETE" : "PUT"
 		
 

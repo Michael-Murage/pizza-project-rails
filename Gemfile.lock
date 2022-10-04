@@ -170,7 +170,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
-  bootsnap (>= 1.4.4)
+  bootsnap
   bullet
   byebug
   faker

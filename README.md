@@ -1,4 +1,5 @@
 # PIZZA APP
+Deployed link: https://pizza-project-rails.herokuapp.com
 This is an app that manages pizzas, restaurants and relevant orders.
 
 ## User Abilities
@@ -33,6 +34,3 @@ A restaurant_pizza `belongs_to` pizza
 
 A pizza `has_many` restaurant_pizzas
 A pizza `has_many` restaurants `through` restaurant_pizzas
-
-
-Deployment link will be coming soon

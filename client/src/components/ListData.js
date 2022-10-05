@@ -4,7 +4,7 @@ import { GrEdit } from 'react-icons/gr';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';
 
-function ListData({ item }) {
+function ListData({ item, setData }) {
 	const navigate = useNavigate()
 	
 	const deleteItem = ()=>{
@@ -15,7 +15,13 @@ function ListData({ item }) {
 			}
 		})
 		.then(res=>res.json())
-		.then(()=>alert('Record has been deleted successfully 😊'))
+		.then(()=>{
+			alert('Record has been deleted successfully 😊')
+			fetch("/api/restaurant_pizzas")
+			.then(res=>res.json())
+			.then(setData)
+			.catch(err=>console.log(err))
+		})
 	}
 
 	return (

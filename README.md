@@ -12,6 +12,17 @@ A user can:
 * View, edit, delete restaurant information and a new restaurant record
 * View, edit, delete restaurant_pizza information and add a new record
 
+<img src="public/images/image1.png" alt="screenshot of the app" width='600px' height='300px'>
+
+
+<img src="public/images/image2.png" alt="screenshot of the app" width='600px' height='300px'>
+
+
+<img src="public/images/image3.png" alt="screenshot of the app" width='600px' height='300px'>
+
+
+<img src="public/images/image4.png" alt="screenshot of the app" width='600px' height='300px'>
+
 ## Local Setup (client and server side)
 To run the server locally, clone the code and run the following commands;
 ```

@@ -1,5 +1,5 @@
 # PIZZA APP
-Deployed link: https://pizza-project-rails.herokuapp.com
+<!-- Deployed link: https://pizza-project-rails.herokuapp.com -->
 
 This is an app that manages pizzas, restaurants and relevant orders.
 

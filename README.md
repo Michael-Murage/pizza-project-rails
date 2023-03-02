@@ -24,7 +24,9 @@ A user can:
 <img src="public/images/image4.png" alt="screenshot of the app" width='600px' height='300px'>
 
 ## Local Setup (client and server side)
-To run the server locally, clone the code and run the following commands;
+<i>The following setup presumes you have `npm`, `ruby` and `rails` installed.</i>
+
+To run the server locally, clone the code and run the following commandsn in your terminal;
 ```
 bundle install
 rails db:migrate db:seed
@@ -52,16 +54,11 @@ A pizza `has_many` restaurant_pizzas
 A pizza `has_many` restaurants `through` restaurant_pizzas
 
 ## Stack
-React v18.2.0
+React
 
-Ruby v2.7.4
+Ruby
 
-Rails v6.1.7
+Rails
 
-## Stack
-React v18.2.0
-
-Ruby v2.7.4
-
-Rails v6.1.7
+SQLite3 and PostgreSQL
 
